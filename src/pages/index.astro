@@ -83,65 +83,77 @@
 				</div>
 
 				<div class="projects">
+
+					<!-- Master's Thesis -->
 					<article class="project">
 						<div class="project-image project-one"></div>
 
 						<div class="project-content">
 							<p class="project-type">MASTER'S THESIS</p>
+
 							<h3>Recommender Systems & User Understanding</h3>
 
 							<p>
-								Exploring how recommender systems can better account for
-								user needs and context through a human-centered lens.
+								Investigating how explanation design in recommender systems
+								influences user understanding through a human-centered research
+								approach.
 							</p>
 
 							<div class="tags">
-								<span>Research</span>
 								<span>HCI</span>
+								<span>User Research</span>
 								<span>Data Analysis</span>
 							</div>
 						</div>
 					</article>
 
+
+					<!-- Master's Project -->
 					<article class="project">
 						<div class="project-image project-two"></div>
 
 						<div class="project-content">
-							<p class="project-type">USER RESEARCH</p>
-							<h3>Perron Building Study</h3>
+							<p class="project-type">MASTER'S PROJECT</p>
+
+							<h3>Web Application for Type 1 Diabetes Management</h3>
 
 							<p>
-								A qualitative study examining user needs, concentration
-								and experiences within the Perron building.
+								Developed a web application combining similarity search and
+								interactive visualizations to help people with type 1 diabetes
+								better understand and manage their health data.
 							</p>
 
 							<div class="tags">
-								<span>UX</span>
-								<span>Qualitative</span>
-								<span>Analysis</span>
+								<span>Web Development</span>
+								<span>Visual Analytics</span>
+								<span>Health</span>
 							</div>
 						</div>
 					</article>
 
+
+					<!-- Bachelor's Thesis -->
 					<article class="project">
 						<div class="project-image project-three"></div>
 
 						<div class="project-content">
-							<p class="project-type">DATA PROJECT</p>
-							<h3>E-Mobility in CH / AT / DE</h3>
+							<p class="project-type">BACHELOR'S THESIS</p>
+
+							<h3>AI in Customer Feedback Management</h3>
 
 							<p>
-								Comparative analysis of e-mobility development across
-								Switzerland, Austria and Germany.
+								A qualitative study examining the results of AI use in online
+								customer feedback management.
 							</p>
 
 							<div class="tags">
-								<span>Data</span>
-								<span>Strategy</span>
-								<span>Visualisation</span>
+								<span>Qualitative Research</span>
+								<span>AI</span>
+								<span>Information Systems</span>
 							</div>
 						</div>
 					</article>
+
 				</div>
 			</section>
 			<section class="about" id="about">
@@ -805,25 +817,29 @@
 
 	.project-image {
 		height: 245px;
-		background-color: #dadeda;
+		border-bottom: 1px solid var(--border);
+		background-color: #d9ddda;
 	}
 
 	.project-one {
-		background:
-			linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15)),
-			linear-gradient(45deg, #dfe4e1, #868f8a);
+		background-image: url('/images/projects/masters-thesis.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
 	.project-two {
-		background:
-			linear-gradient(120deg, transparent 40%, rgba(0, 0, 0, 0.12)),
-			linear-gradient(45deg, #bcc3bf, #e2e5e2);
+		background-image: url('/images/projects/masters-project.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
 	.project-three {
-		background:
-			linear-gradient(160deg, transparent 40%, rgba(0, 0, 0, 0.25)),
-			linear-gradient(45deg, #d9ddd9, #7d8781);
+		background-image: url('/images/projects/bachelors-thesis.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;	
 	}
 
 	.project-content {
@@ -1377,9 +1393,10 @@
 		}
 
 		.projects {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(2, 1fr);
 		}
-				.about-grid {
+
+		.about-grid {
 			grid-template-columns: 1fr;
 		}
 
@@ -1388,6 +1405,10 @@
 			border-top: 1px solid var(--border);
 			padding-left: 0;
 			padding-top: 32px;
+
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 40px;
 		}
 
 		.career {
@@ -1452,6 +1473,15 @@
 
 		.contact-links {
 			flex-wrap: wrap;
+		}
+
+		.projects {
+			grid-template-columns: 1fr;
+		}
+
+		.about-facts {
+			grid-template-columns: 1fr;
+			gap: 36px;
 		}
 	}
 </style>
