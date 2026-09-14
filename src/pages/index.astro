@@ -1,17 +1,524 @@
 ---
-
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+
+		<title>Marco Thoma | Portfolio</title>
+
+		<meta
+			name="description"
+			content="Personal portfolio of Marco Thoma — exploring the intersection of people, technology and digital experiences."
+		/>
 	</head>
+
 	<body>
-		<h1>Astro</h1>
+		<header class="header">
+			<a class="logo" href="/">MT</a>
+
+			<nav>
+				<a href="#about">About</a>
+				<a href="#work">Work</a>
+				<a href="#experience">Experience</a>
+				<a href="#education">Education</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero">
+				<div class="hero-content">
+					<p class="eyebrow">PEOPLE × TECHNOLOGY × DIGITAL EXPERIENCES</p>
+
+					<h1>
+						Hi, I’m <span>Marco.</span>
+					</h1>
+
+					<h2>
+						I work at the intersection of people, technology
+						and meaningful digital experiences.
+					</h2>
+
+					<p class="intro">
+						I’m a People-Oriented Computing graduate with an
+						interdisciplinary background in information systems and business,
+						interested in understanding how people interact with technology
+						and how digital products can create meaningful impact.
+					</p>
+
+					<div class="actions">
+						<a class="button primary" href="#work">
+							View my work
+							<span>→</span>
+						</a>
+
+						<a class="button secondary" href="#contact">
+							Get in touch
+						</a>
+					</div>
+				</div>
+
+				<div class="hero-visual" aria-hidden="true">
+					<div class="orb"></div>
+
+					<div class="visual-label">
+						<span></span>
+						<p>
+							TECHNOLOGY<br />
+							PEOPLE<br />
+							BETTER OUTCOMES
+						</p>
+					</div>
+
+					<div class="counter">
+						01 / 03
+					</div>
+				</div>
+			</section>
+
+			<section class="work" id="work">
+				<div class="section-heading">
+					<p>SELECTED WORK</p>
+					<a href="#">View all work →</a>
+				</div>
+
+				<div class="projects">
+					<article class="project">
+						<div class="project-image project-one"></div>
+
+						<div class="project-content">
+							<p class="project-type">MASTER'S THESIS</p>
+							<h3>Recommender Systems & User Understanding</h3>
+
+							<p>
+								Exploring how recommender systems can better account for
+								user needs and context through a human-centered lens.
+							</p>
+
+							<div class="tags">
+								<span>Research</span>
+								<span>HCI</span>
+								<span>Data Analysis</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="project">
+						<div class="project-image project-two"></div>
+
+						<div class="project-content">
+							<p class="project-type">USER RESEARCH</p>
+							<h3>Perron Building Study</h3>
+
+							<p>
+								A qualitative study examining user needs, concentration
+								and experiences within the Perron building.
+							</p>
+
+							<div class="tags">
+								<span>UX</span>
+								<span>Qualitative</span>
+								<span>Analysis</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="project">
+						<div class="project-image project-three"></div>
+
+						<div class="project-content">
+							<p class="project-type">DATA PROJECT</p>
+							<h3>E-Mobility in CH / AT / DE</h3>
+
+							<p>
+								Comparative analysis of e-mobility development across
+								Switzerland, Austria and Germany.
+							</p>
+
+							<div class="tags">
+								<span>Data</span>
+								<span>Strategy</span>
+								<span>Visualisation</span>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
+
+<style>
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+
+	:global(body) {
+		margin: 0;
+		background: #f7f7f5;
+		color: #101312;
+		font-family:
+			Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	}
+
+	:root {
+		--page-padding: clamp(24px, 5vw, 76px);
+		--accent: #657c70;
+		--border: #d9ddda;
+		--muted: #616765;
+	}
+
+	.header {
+		height: 90px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 var(--page-padding);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+	}
+
+	.logo {
+		color: #101312;
+		font-size: 22px;
+		font-weight: 750;
+		text-decoration: none;
+		letter-spacing: -0.04em;
+	}
+
+	nav {
+		display: flex;
+		gap: 32px;
+	}
+
+	nav a {
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 14px;
+		transition: opacity 0.2s ease;
+	}
+
+	nav a:hover {
+		opacity: 0.6;
+	}
+
+	.hero {
+		min-height: 720px;
+		display: grid;
+		grid-template-columns: 53% 47%;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 140px var(--page-padding) 90px;
+	}
+
+	.eyebrow {
+		margin: 0 0 30px;
+		color: #6b716f;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+	}
+
+	h1 {
+		font-size: clamp(58px, 6vw, 94px);
+		line-height: 0.95;
+		letter-spacing: -0.06em;
+		margin: 0 0 20px;
+		font-weight: 650;
+	}
+
+	h1 span {
+		color: var(--accent);
+	}
+
+	h2 {
+		max-width: 680px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(30px, 3.2vw, 49px);
+		font-weight: 400;
+		line-height: 1.12;
+		letter-spacing: -0.035em;
+		margin: 0 0 28px;
+	}
+
+	.intro {
+		max-width: 610px;
+		font-size: 16px;
+		line-height: 1.7;
+		color: var(--muted);
+		margin: 0;
+	}
+
+	.actions {
+		display: flex;
+		gap: 14px;
+		margin-top: 36px;
+	}
+
+	.button {
+		min-height: 48px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 28px;
+		border-radius: 4px;
+		padding: 0 22px;
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 600;
+		transition:
+			transform 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+	}
+
+	.primary {
+		background: #111514;
+		color: white;
+	}
+
+	.secondary {
+		color: #111514;
+		border: 1px solid #cbd0cd;
+	}
+
+	.hero-visual {
+		position: relative;
+		overflow: hidden;
+		background:
+			radial-gradient(
+				circle at 25% 45%,
+				rgba(255, 255, 255, 0.25),
+				transparent 25%
+			),
+			linear-gradient(135deg, #c8ceca 0%, #59615d 35%, #09100e 72%);
+	}
+
+	.orb {
+		position: absolute;
+		width: 740px;
+		height: 740px;
+		border-radius: 50%;
+		left: -80px;
+		top: 110px;
+		background:
+			radial-gradient(
+				circle at 33% 28%,
+				rgba(255, 255, 255, 0.85),
+				rgba(255, 255, 255, 0.25) 25%,
+				rgba(60, 70, 66, 0.25) 48%,
+				#07100d 74%
+			);
+		box-shadow:
+			inset -40px -20px 80px rgba(0, 0, 0, 0.55),
+			0 0 80px rgba(255, 255, 255, 0.08);
+	}
+
+	.orb::after {
+		content: "";
+		position: absolute;
+		inset: 9%;
+		border: 1px solid rgba(255, 255, 255, 0.16);
+		border-radius: 50%;
+		transform: rotate(-20deg) scaleY(0.55);
+	}
+
+	.visual-label {
+		position: absolute;
+		right: 9%;
+		top: 105px;
+		color: rgba(255, 255, 255, 0.55);
+		font-size: 9px;
+		line-height: 1.8;
+		letter-spacing: 0.17em;
+	}
+
+	.visual-label span {
+		display: block;
+		width: 25px;
+		height: 1px;
+		background: rgba(255, 255, 255, 0.6);
+		margin-bottom: 15px;
+	}
+
+	.counter {
+		position: absolute;
+		right: 9%;
+		bottom: 55px;
+		color: white;
+		font-size: 12px;
+		letter-spacing: 0.12em;
+	}
+
+	.work {
+		padding: 70px var(--page-padding) 100px;
+	}
+
+	.section-heading {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 34px;
+	}
+
+	.section-heading p {
+		margin: 0;
+		font-size: 11px;
+		font-weight: 750;
+		letter-spacing: 0.18em;
+	}
+
+	.section-heading a {
+		color: #242827;
+		font-size: 13px;
+		text-decoration: none;
+	}
+
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 22px;
+	}
+
+	.project {
+		border: 1px solid var(--border);
+		background: #fbfbfa;
+		border-radius: 5px;
+		overflow: hidden;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.project:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 18px 40px rgba(10, 15, 12, 0.08);
+	}
+
+	.project-image {
+		height: 245px;
+		background-color: #dadeda;
+	}
+
+	.project-one {
+		background:
+			linear-gradient(135deg, transparent, rgba(0, 0, 0, 0.15)),
+			linear-gradient(45deg, #dfe4e1, #868f8a);
+	}
+
+	.project-two {
+		background:
+			linear-gradient(120deg, transparent 40%, rgba(0, 0, 0, 0.12)),
+			linear-gradient(45deg, #bcc3bf, #e2e5e2);
+	}
+
+	.project-three {
+		background:
+			linear-gradient(160deg, transparent 40%, rgba(0, 0, 0, 0.25)),
+			linear-gradient(45deg, #d9ddd9, #7d8781);
+	}
+
+	.project-content {
+		padding: 24px;
+	}
+
+	.project-type {
+		font-size: 10px;
+		font-weight: 700;
+		color: #777d7a;
+		letter-spacing: 0.14em;
+		margin: 0 0 12px;
+	}
+
+	.project h3 {
+		margin: 0 0 14px;
+		font-size: 21px;
+		line-height: 1.25;
+		letter-spacing: -0.025em;
+	}
+
+	.project-content > p:not(.project-type) {
+		color: var(--muted);
+		font-size: 14px;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 7px;
+		margin-top: 24px;
+	}
+
+	.tags span {
+		background: #eceeec;
+		padding: 6px 9px;
+		border-radius: 3px;
+		font-size: 10px;
+		color: #555b58;
+	}
+
+	@media (max-width: 900px) {
+		.header {
+			position: relative;
+			height: 75px;
+		}
+
+		nav {
+			display: none;
+		}
+
+		.hero {
+			grid-template-columns: 1fr;
+		}
+
+		.hero-content {
+			padding-top: 70px;
+		}
+
+		.hero-visual {
+			min-height: 430px;
+		}
+
+		.projects {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 52px;
+		}
+
+		h2 {
+			font-size: 31px;
+		}
+
+		.actions {
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.button {
+			justify-content: space-between;
+		}
+	}
+</style>
