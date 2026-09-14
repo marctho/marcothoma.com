@@ -59,8 +59,6 @@
 				</div>
 
 				<div class="hero-visual" aria-hidden="true">
-					<div class="orb"></div>
-
 					<div class="visual-label">
 						<span></span>
 						<p>
@@ -76,7 +74,7 @@
 				</div>
 			</section>
 
-			<section class="work" id="work">
+			<section class="work reveal" id="work">
 				<div class="section-heading">
 					<p>SELECTED WORK</p>
 					<a href="#">View all work →</a>
@@ -156,7 +154,7 @@
 
 				</div>
 			</section>
-			<section class="about" id="about">
+			<section class="about reveal" id="about">
 				<div class="about-label">
 					<p>ABOUT</p>
 				</div>
@@ -208,7 +206,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="career">
+			<section class="career reveal">
 				<div class="career-column" id="experience">
 					<div class="career-heading">
 						<p>EXPERIENCE</p>
@@ -485,7 +483,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="contact" id="contact">
+			<section class="contact reveal" id="contact">
 				<div class="contact-inner">
 					<div class="contact-copy">
 						<p class="contact-label">LET’S CONNECT</p>
@@ -550,6 +548,26 @@
 
 			<p>© 2026</p>
 		</footer>
+		<script>
+			const revealElements = document.querySelectorAll('.reveal');
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('visible');
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{
+					threshold: 0.12,
+					rootMargin: '0px 0px -40px 0px',
+				}
+			);
+
+			revealElements.forEach((element) => observer.observe(element));
+		</script>
 	</body>
 </html>
 
@@ -572,7 +590,7 @@
 
 	:root {
 		--page-padding: clamp(24px, 5vw, 76px);
-		--accent: #657c70;
+		--accent: #deac53;
 		--border: #d9ddda;
 		--muted: #616765;
 	}
@@ -611,7 +629,8 @@
 	}
 
 	nav a:hover {
-		opacity: 0.6;
+		color: var(--accent);
+		opacity: 1;
 	}
 
 	.hero {
@@ -619,6 +638,11 @@
 		display: grid;
 		grid-template-columns: 53% 47%;
 		border-bottom: 1px solid var(--border);
+
+		background-image: url('/images/hero/earth-network.png');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 	}
 
 	.hero-content {
@@ -692,6 +716,12 @@
 		transform: translateY(-2px);
 	}
 
+	.button span,
+	.text-link span,
+	.contact-button span {
+		color: var(--accent);
+	}
+
 	.primary {
 		background: #111514;
 		color: white;
@@ -705,42 +735,7 @@
 	.hero-visual {
 		position: relative;
 		overflow: hidden;
-		background:
-			radial-gradient(
-				circle at 25% 45%,
-				rgba(255, 255, 255, 0.25),
-				transparent 25%
-			),
-			linear-gradient(135deg, #c8ceca 0%, #59615d 35%, #09100e 72%);
-	}
-
-	.orb {
-		position: absolute;
-		width: 740px;
-		height: 740px;
-		border-radius: 50%;
-		left: -80px;
-		top: 110px;
-		background:
-			radial-gradient(
-				circle at 33% 28%,
-				rgba(255, 255, 255, 0.85),
-				rgba(255, 255, 255, 0.25) 25%,
-				rgba(60, 70, 66, 0.25) 48%,
-				#07100d 74%
-			);
-		box-shadow:
-			inset -40px -20px 80px rgba(0, 0, 0, 0.55),
-			0 0 80px rgba(255, 255, 255, 0.08);
-	}
-
-	.orb::after {
-		content: "";
-		position: absolute;
-		inset: 9%;
-		border: 1px solid rgba(255, 255, 255, 0.16);
-		border-radius: 50%;
-		transform: rotate(-20deg) scaleY(0.55);
+		background: transparent;
 	}
 
 	.visual-label {
@@ -792,6 +787,10 @@
 		color: #242827;
 		font-size: 13px;
 		text-decoration: none;
+	}
+
+	.section-heading a:hover {
+		color: var(--accent);
 	}
 
 	.projects {
@@ -1321,7 +1320,7 @@
 	}
 
 	.contact-links a:hover {
-		color: #ffffff;
+		color: var(--accent);
 	}
 
 	.contact-side {
@@ -1370,6 +1369,77 @@
 		text-align: right;
 	}
 
+	@keyframes heroFadeUp {
+		from {
+			opacity: 0;
+			transform: translateY(18px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes heroFadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	.hero-content .eyebrow,
+	.hero-content h1,
+	.hero-content h2,
+	.hero-content .intro,
+	.hero-content .actions {
+		opacity: 0;
+		animation: heroFadeUp 0.75s ease forwards;
+	}
+
+	.hero-content .eyebrow {
+		animation-delay: 0.1s;
+	}
+
+	.hero-content h1 {
+		animation-delay: 0.2s;
+	}
+
+	.hero-content h2 {
+		animation-delay: 0.32s;
+	}
+
+	.hero-content .intro {
+		animation-delay: 0.44s;
+	}
+
+	.hero-content .actions {
+		animation-delay: 0.56s;
+	}
+
+	.visual-label,
+	.counter {
+		opacity: 0;
+		animation: heroFadeIn 1s ease forwards;
+		animation-delay: 0.7s;
+	}
+
+	.reveal {
+		opacity: 0;
+		transform: translateY(28px);
+		transition:
+			opacity 0.8s ease,
+			transform 0.8s ease;
+	}
+
+	.reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
 	@media (max-width: 900px) {
 		.header {
 			position: relative;
@@ -1382,6 +1452,7 @@
 
 		.hero {
 			grid-template-columns: 1fr;
+			background-image: none;
 		}
 
 		.hero-content {
@@ -1390,6 +1461,11 @@
 
 		.hero-visual {
 			min-height: 430px;
+
+			background-image: url('/images/hero/earth-network.png');
+			background-size: cover;
+			background-position: 70% center;
+			background-repeat: no-repeat;
 		}
 
 		.projects {
@@ -1482,6 +1558,25 @@
 		.about-facts {
 			grid-template-columns: 1fr;
 			gap: 36px;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hero-content .eyebrow,
+		.hero-content h1,
+		.hero-content h2,
+		.hero-content .intro,
+		.hero-content .actions,
+		.visual-label,
+		.counter {
+			animation: none;
+			opacity: 1;
+			transform: none;
+		}
+		.reveal {
+			opacity: 1;
+			transform: none;
+			transition: none;
 		}
 	}
 </style>
