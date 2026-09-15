@@ -1,0 +1,1128 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<title>
+			Type 1 Diabetes Management Project | Marco Thoma
+		</title>
+
+		<meta
+			name="description"
+			content="A Master's project exploring similarity search and interactive visual analytics for Type 1 diabetes health data."
+		/>
+	</head>
+
+	<body>
+		<header class="project-header">
+			<a class="logo" href="/">MT</a>
+
+			<a class="back-link" href="/#work">
+				<span>←</span>
+				Back to work
+			</a>
+		</header>
+
+		<main>
+
+			<!-- HERO -->
+			<section class="project-hero">
+				<div class="hero-copy">
+					<p class="eyebrow">
+						MASTER'S PROJECT · INTERACTIVE VISUAL DATA ANALYTICS
+					</p>
+
+					<h1>
+						Similarity Search in Health Data through
+						Interactive Visual Data Analytics
+					</h1>
+
+					<p class="hero-intro">
+						A web application designed to help people with Type 1 diabetes
+						explore their health data, identify comparable situations and
+						better understand patterns through similarity search and
+						interactive visualizations.
+					</p>
+
+                    <div class="hero-concept">
+                        <span>CORE IDEA</span>
+
+                        <p>
+                            Explore.<br />
+                            Search.<br />
+                            Compare.
+                        </p>
+                    </div>
+
+					<div class="project-meta">
+						<div>
+							<span>Role</span>
+							<p>Frontend Development</p>
+						</div>
+
+						<div>
+							<span>Team</span>
+							<p>5 people</p>
+						</div>
+
+						<div>
+							<span>Focus</span>
+							<p>Visual Analytics · HCI · Health Data</p>
+						</div>
+
+						<div>
+							<span>Frontend</span>
+							<p>React · TypeScript · D3</p>
+						</div>
+					</div>
+				</div>
+
+				<figure class="hero-image">
+					<img
+						src="/images/projects/masters-project.png"
+						alt="Overview screen of the Type 1 diabetes visual analytics application"
+					/>
+				</figure>
+			</section>
+
+
+			<!-- CONTEXT -->
+			<section class="content-section">
+				<div class="section-number">01 / CONTEXT</div>
+
+				<div class="section-content">
+					<h2>
+						Making complex diabetes data easier to explore.
+					</h2>
+
+					<div class="two-column-text">
+						<p>
+							People with Type 1 diabetes generate large amounts of
+							time-based health data. Glucose levels are influenced by
+							multiple contextual factors such as insulin, carbohydrate
+							intake, physical activity and sleep, making it difficult to
+							understand why similar situations may lead to different
+							outcomes.
+						</p>
+
+						<p>
+							Our project explored how interactive visual analytics and
+							similarity search could help users investigate these
+							relationships. Rather than only tracking individual values,
+							the application allows users to search for comparable
+							situations across their data and inspect the factors that
+							contributed to those similarities.
+						</p>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- ROLE -->
+			<section class="content-section muted-section">
+				<div class="section-number">02 / MY ROLE</div>
+
+				<div class="section-content">
+					<h2>
+						Frontend development in a five-person team.
+					</h2>
+
+					<p class="wide-copy">
+						The project was developed by a team of five. I worked on the
+						frontend together with one other team member, contributing to
+						the implementation of the user-facing application and its
+						interactive visualizations.
+					</p>
+
+					<p class="wide-copy secondary-copy">
+						The frontend work was collaborative, so I present it here as a
+						shared contribution rather than attributing individual
+						components exclusively to one person.
+					</p>
+				</div>
+			</section>
+
+
+			<!-- PROCESS -->
+			<section class="content-section">
+				<div class="section-number">03 / PROCESS</div>
+
+				<div class="section-content">
+					<h2>
+						From user needs to an interactive prototype.
+					</h2>
+
+					<div class="process-grid">
+						<div class="process-item">
+							<span>01</span>
+							<h3>Research</h3>
+
+							<p>
+								We reviewed existing diabetes-management and visual
+								analytics tools to understand current approaches and
+								identify opportunities for deeper pattern exploration.
+							</p>
+						</div>
+
+						<div class="process-item">
+							<span>02</span>
+							<h3>Understand</h3>
+
+							<p>
+								Three people with Type 1 diabetes were interviewed to
+								understand their needs, how they explore their data and
+								what similarity means in the context of diabetes
+								management.
+							</p>
+						</div>
+
+						<div class="process-item">
+							<span>03</span>
+							<h3>Prototype</h3>
+
+							<p>
+								Insights were translated into user tasks and interface
+								concepts. We used Figma and design sessions to explore
+								ways of combining search controls, visualizations and
+								detailed data views.
+							</p>
+						</div>
+
+						<div class="process-item">
+							<span>04</span>
+							<h3>Refine</h3>
+
+							<p>
+								After feedback on an initial prototype, the interface
+								was redesigned from two separate screens into a more
+								consistent single-screen workflow that adapts after a
+								search.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- SIMILARITY SEARCH -->
+			<section class="feature-section">
+				<div class="feature-copy">
+					<p class="eyebrow">CONFIGURABLE SEARCH</p>
+
+					<h2>
+						Users define what “similar” means.
+					</h2>
+
+					<p>
+						The search can be configured according to the user's
+						priorities. Individual health features can be weighted and
+						different distance metrics can be selected, allowing the
+						search to reflect different interpretations of similarity.
+					</p>
+
+					<p>
+						The application supports Euclidean distance, correlation,
+						Dynamic Time Warping and weighted combinations of multiple
+						metrics.
+					</p>
+				</div>
+
+				<figure class="feature-image small-image">
+					<img
+						src="/images/projects/type-1-diabetes/similarity-settings.png"
+						alt="Similarity search settings with adjustable feature weights"
+					/>
+
+					<figcaption>
+						Similarity search settings with adjustable feature
+						weights and distance metrics.
+					</figcaption>
+				</figure>
+			</section>
+
+
+			<!-- SOLUTION -->
+			<section class="content-section muted-section">
+				<div class="section-number">04 / SOLUTION</div>
+
+				<div class="section-content">
+					<h2>
+						Exploration, search and comparison in one interface.
+					</h2>
+
+					<p class="wide-copy">
+						The final application combines multiple linked
+						visualizations. Before a search, users can explore the dataset
+						and inspect individual days. After selecting a query time
+						range, the application searches for comparable situations and
+						reconfigures the interface to present ranked results and
+						comparison views.
+					</p>
+
+					<div class="feature-list">
+						<div>
+							<span>01</span>
+							<p>Explore multidimensional health data</p>
+						</div>
+
+						<div>
+							<span>02</span>
+							<p>Define a query time range</p>
+						</div>
+
+						<div>
+							<span>03</span>
+							<p>Configure similarity criteria</p>
+						</div>
+
+						<div>
+							<span>04</span>
+							<p>Inspect ranked matching situations</p>
+						</div>
+
+						<div>
+							<span>05</span>
+							<p>Compare selected results against the query</p>
+						</div>
+
+						<div>
+							<span>06</span>
+							<p>Understand feature contributions to similarity</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- SEARCH RESULT -->
+			<section class="visual-section">
+				<div class="visual-heading">
+					<div>
+						<p class="eyebrow">AFTER THE SEARCH</p>
+
+						<h2>
+							Results adapt the entire analytics workspace.
+						</h2>
+					</div>
+
+					<p>
+						Once the search is executed, the interface makes room for
+						ranked matches while the surrounding visualizations update to
+						represent the search results.
+					</p>
+				</div>
+
+				<figure class="large-visual">
+					<img
+						src="/images/projects/type-1-diabetes/search-results.png"
+						alt="Application overview after a similarity search"
+					/>
+
+					<figcaption>
+						Application overview after executing a similarity search.
+					</figcaption>
+				</figure>
+			</section>
+
+
+			<!-- COMPARISON -->
+			<section class="visual-section comparison-section">
+				<div class="visual-heading">
+					<div>
+						<p class="eyebrow">COMPARISON</p>
+
+						<h2>
+							From ranked matches to detailed comparison.
+						</h2>
+					</div>
+
+					<p>
+						Users can select up to three search results for comparison.
+						Their time-series data is overlaid against the original query,
+						making differences and similarities across individual features
+						easier to inspect.
+					</p>
+				</div>
+
+				<figure class="large-visual">
+					<img
+						src="/images/projects/type-1-diabetes/comparison-results.png"
+						alt="Ranked similarity results with three selected results compared to the query"
+					/>
+
+					<figcaption>
+						Three selected similarity-search results compared with
+						the original query.
+					</figcaption>
+				</figure>
+			</section>
+
+
+			<!-- TECH STACK -->
+			<section class="content-section dark-section">
+				<div class="section-number">05 / TECHNOLOGY</div>
+
+				<div class="section-content">
+					<h2>
+						Technology stack.
+					</h2>
+
+					<div class="tech-grid">
+						<div>
+							<span>Frontend</span>
+							<h3>React</h3>
+							<p>TypeScript · D3 · Electron Forge</p>
+						</div>
+
+						<div>
+							<span>Backend</span>
+							<h3>Python</h3>
+							<p>FastAPI</p>
+						</div>
+
+						<div>
+							<span>Data</span>
+							<h3>PostgreSQL</h3>
+							<p>TimescaleDB</p>
+						</div>
+
+						<div>
+							<span>Workflow</span>
+							<h3>GitLab</h3>
+							<p>Git · Docker · Figma</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- OUTCOME -->
+			<section class="content-section outcome-section">
+				<div class="section-number">06 / OUTCOME</div>
+
+				<div class="section-content">
+					<h2>
+						A working prototype and a foundation for further evaluation.
+					</h2>
+
+					<div class="two-column-text">
+						<p>
+							The project resulted in a functional application that
+							combines configurable similarity search with interactive
+							visual analytics. It demonstrates how complex
+							multidimensional health data can be transformed into an
+							explorable workflow rather than presented only as isolated
+							measurements.
+						</p>
+
+						<p>
+							A formal user evaluation was planned as the next stage of
+							the project. This would involve people with Type 1 diabetes
+							and visual analytics expertise using the application,
+							thinking aloud while completing tasks and providing
+							feedback for subsequent iterations.
+						</p>
+					</div>
+
+					<div class="takeaway">
+						<p class="eyebrow">PERSONAL TAKEAWAY</p>
+
+						<p>
+							The project gave me practical experience working on a
+							collaborative frontend, developing visualization-rich
+							interfaces and translating a technically complex analytical
+							concept into a user-facing digital product.
+						</p>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- NEXT PROJECT -->
+			<section class="next-project">
+				<p>BACK TO SELECTED WORK</p>
+
+				<a href="/#work">
+					View projects
+					<span>→</span>
+				</a>
+			</section>
+
+		</main>
+
+		<footer>
+			<p>marcothoma.com</p>
+			<p>Designed & built by Marco Thoma</p>
+			<p>© 2026</p>
+		</footer>
+	</body>
+</html>
+
+
+<style>
+	:root {
+		--background: #f7f7f5;
+		--surface: #ffffff;
+		--text: #101312;
+		--muted: #626966;
+		--light-muted: #858b88;
+		--border: #d9ddda;
+		--accent: #deac53;
+		--page-padding: clamp(28px, 4vw, 76px);
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		background: var(--background);
+		color: var(--text);
+		font-family:
+			Arial,
+			Helvetica,
+			sans-serif;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+	}
+
+	a {
+		color: inherit;
+	}
+
+
+	/* HEADER */
+
+	.project-header {
+		height: 84px;
+		padding: 0 var(--page-padding);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.logo {
+		font-size: 22px;
+		font-weight: 750;
+		text-decoration: none;
+	}
+
+	.back-link {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 12px;
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.back-link span {
+		color: var(--accent);
+		transition: transform 0.2s ease;
+	}
+
+	.back-link:hover {
+		color: var(--accent);
+	}
+
+	.back-link:hover span {
+		transform: translateX(-4px);
+	}
+
+
+	/* HERO */
+
+	.project-hero {
+		padding: 90px var(--page-padding) 0;
+	}
+
+	.hero-copy {
+		max-width: 1150px;
+		margin-bottom: 65px;
+	}
+
+	.eyebrow {
+		margin: 0 0 22px;
+		color: var(--light-muted);
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+	}
+
+	.project-hero h1 {
+		max-width: 1100px;
+		margin: 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(46px, 6vw, 88px);
+		font-weight: 400;
+		line-height: 1.02;
+		letter-spacing: -0.045em;
+	}
+
+	.hero-intro {
+		max-width: 760px;
+		margin: 34px 0 0;
+		color: var(--muted);
+		font-size: 17px;
+		line-height: 1.7;
+	}
+
+    .hero-copy {
+        position: relative;
+        max-width: 1150px;
+        margin-bottom: 65px;
+    }
+
+    .hero-concept {
+        position: absolute;
+        top: 35px;
+        left: calc(100% + 120px);
+        width: 220px;
+        padding-top: 18px;
+        border-top: 1px solid var(--accent);
+    }
+
+    .hero-concept span {
+        color: var(--light-muted);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+    }
+
+    .hero-concept p {
+        margin: 16px 0 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+	.project-meta {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 30px;
+		margin-top: 55px;
+		padding-top: 26px;
+		border-top: 1px solid var(--border);
+	}
+
+	.project-meta span {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--light-muted);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+	}
+
+	.project-meta p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+	}
+
+	.hero-image {
+        max-width: 1650px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 4px 4px 0 0;
+        border: 1px solid var(--border);
+        border-bottom: 0;
+        background: white;
+	}
+
+	.hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+	}
+
+
+	/* STANDARD CONTENT SECTION */
+
+	.content-section {
+		display: grid;
+		grid-template-columns: minmax(130px, 0.23fr) 1fr;
+		gap: 60px;
+		padding: 110px var(--page-padding);
+		border-top: 1px solid var(--border);
+	}
+
+	.section-number {
+		padding-top: 9px;
+		color: var(--light-muted);
+		font-size: 9px;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+	}
+
+	.section-content h2,
+	.feature-copy h2,
+	.visual-heading h2 {
+		max-width: 900px;
+		margin: 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(34px, 4vw, 56px);
+		font-weight: 400;
+		line-height: 1.08;
+		letter-spacing: -0.035em;
+	}
+
+	.two-column-text {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: clamp(40px, 7vw, 110px);
+		max-width: 1100px;
+		margin-top: 42px;
+	}
+
+	.two-column-text p,
+	.wide-copy,
+	.feature-copy > p,
+	.visual-heading > p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 15px;
+		line-height: 1.8;
+	}
+
+	.wide-copy {
+		max-width: 800px;
+		margin-top: 38px;
+	}
+
+	.secondary-copy {
+		margin-top: 18px;
+		color: var(--light-muted);
+	}
+
+
+	/* MUTED SECTION */
+
+	.muted-section {
+		background: #eeeeeb;
+	}
+
+
+	/* PROCESS */
+
+	.process-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0;
+		margin-top: 60px;
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.process-item {
+		min-height: 280px;
+		padding: 28px;
+		border-right: 1px solid var(--border);
+	}
+
+	.process-item:last-child {
+		border-right: 0;
+	}
+
+	.process-item > span {
+		color: var(--accent);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 24px;
+	}
+
+	.process-item h3 {
+		margin: 42px 0 13px;
+		font-size: 17px;
+	}
+
+	.process-item p {
+		margin: 0;
+		color: var(--muted);
+		font-size: 13px;
+		line-height: 1.7;
+	}
+
+
+	/* FEATURE SECTION */
+
+	.feature-section {
+		display: grid;
+		grid-template-columns: 0.75fr 1.25fr;
+		gap: clamp(50px, 8vw, 130px);
+		align-items: center;
+		padding: 110px var(--page-padding);
+		border-top: 1px solid var(--border);
+	}
+
+	.feature-copy > p:not(.eyebrow) {
+		margin-top: 25px;
+	}
+
+	.feature-image {
+        width: 100%;
+        max-width: 650px;
+        margin: 0;
+        justify-self: end;
+	}
+
+    .feature-image figcaption {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+	.small-image img {
+		border: 1px solid var(--border);
+		border-radius: 12px;
+	}
+
+	figcaption {
+		margin-top: 12px;
+		color: var(--light-muted);
+		font-size: 10px;
+		line-height: 1.5;
+	}
+
+
+	/* FEATURES */
+
+	.feature-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0;
+		margin-top: 55px;
+		border-top: 1px solid var(--border);
+		border-left: 1px solid var(--border);
+	}
+
+	.feature-list div {
+		min-height: 135px;
+		padding: 22px;
+		border-right: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.feature-list span {
+		color: var(--accent);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 20px;
+	}
+
+	.feature-list p {
+		margin: 27px 0 0;
+		font-size: 13px;
+		line-height: 1.5;
+	}
+
+
+	/* LARGE VISUAL SECTIONS */
+
+	.visual-section {
+		padding: 110px var(--page-padding);
+		border-top: 1px solid var(--border);
+	}
+
+	.visual-heading {
+		display: grid;
+		grid-template-columns: 1fr 0.7fr;
+		gap: 70px;
+		align-items: end;
+		margin-bottom: 55px;
+	}
+
+	.large-visual {
+        max-width: 1500px;
+        margin: 0 auto;
+	}
+
+	.large-visual img {
+        width: 100%;
+        height: auto;
+        border: 1px solid var(--border);
+        background: white;
+	}
+
+	.comparison-section {
+		background: #eeeeeb;
+	}
+
+
+	/* TECHNOLOGY */
+
+	.dark-section {
+		background: #0b100e;
+		color: white;
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.dark-section .section-number {
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+	.tech-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: 55px;
+		border-top: 1px solid rgba(255, 255, 255, 0.14);
+		border-left: 1px solid rgba(255, 255, 255, 0.14);
+	}
+
+	.tech-grid > div {
+		min-height: 175px;
+		padding: 25px;
+		border-right: 1px solid rgba(255, 255, 255, 0.14);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+	}
+
+	.tech-grid span {
+		color: rgba(255, 255, 255, 0.42);
+		font-size: 9px;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+
+	.tech-grid h3 {
+		margin: 34px 0 7px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 26px;
+		font-weight: 400;
+	}
+
+	.tech-grid p {
+		margin: 0;
+		color: rgba(255, 255, 255, 0.55);
+		font-size: 12px;
+	}
+
+
+	/* OUTCOME */
+
+	.outcome-section {
+		padding-bottom: 130px;
+	}
+
+	.takeaway {
+		max-width: 900px;
+		margin-top: 75px;
+		padding-top: 28px;
+		border-top: 1px solid var(--border);
+	}
+
+	.takeaway > p:last-child {
+		max-width: 800px;
+		margin: 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(25px, 3vw, 37px);
+		line-height: 1.3;
+	}
+
+
+	/* NEXT PROJECT */
+
+	.next-project {
+		padding: 75px var(--page-padding);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: var(--accent);
+	}
+
+	.next-project > p {
+		margin: 0;
+		font-size: 9px;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+	}
+
+	.next-project a {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(28px, 4vw, 48px);
+		text-decoration: none;
+	}
+
+	.next-project a span {
+		transition: transform 0.2s ease;
+	}
+
+	.next-project a:hover span {
+		transform: translateX(6px);
+	}
+
+
+	/* FOOTER */
+
+	footer {
+		min-height: 72px;
+		padding: 0 var(--page-padding);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		font-size: 10px;
+		color: var(--muted);
+	}
+
+	footer p {
+		margin: 0;
+	}
+
+	footer p:nth-child(2) {
+		text-align: center;
+	}
+
+	footer p:last-child {
+		text-align: right;
+	}
+
+
+	/* TABLET */
+
+	@media (max-width: 900px) {
+		.project-hero {
+			padding-top: 65px;
+		}
+
+		.project-meta {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.content-section {
+			grid-template-columns: 1fr;
+			gap: 32px;
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
+		.two-column-text {
+			grid-template-columns: 1fr;
+			gap: 25px;
+		}
+
+		.process-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.process-item:nth-child(2) {
+			border-right: 0;
+		}
+
+		.feature-section {
+			grid-template-columns: 1fr;
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
+		.feature-list {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.visual-section {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
+		.visual-heading {
+			grid-template-columns: 1fr;
+			gap: 25px;
+		}
+
+		.tech-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		footer {
+			grid-template-columns: 1fr;
+			gap: 7px;
+			padding-top: 22px;
+			padding-bottom: 22px;
+		}
+
+		footer p:nth-child(2),
+		footer p:last-child {
+			text-align: left;
+		}
+	}
+
+
+	/* MOBILE */
+
+	@media (max-width: 600px) {
+		.project-header {
+			height: 70px;
+		}
+
+		.project-hero {
+			padding-top: 48px;
+		}
+
+		.project-hero h1 {
+			font-size: 43px;
+		}
+
+		.hero-intro {
+			font-size: 15px;
+		}
+
+        .hero-concept {
+            display: none;
+        }
+
+		.project-meta {
+			grid-template-columns: 1fr;
+			gap: 22px;
+		}
+
+		.process-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.process-item,
+		.process-item:nth-child(2) {
+			border-right: 0;
+		}
+
+		.feature-list {
+			grid-template-columns: 1fr;
+		}
+
+		.tech-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.next-project {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 28px;
+		}
+	}
+
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+
+		.back-link span,
+		.next-project a span {
+			transition: none;
+		}
+	}
+</style>

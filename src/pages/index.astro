@@ -112,7 +112,7 @@
 
 
 					<!-- Master's Project -->
-					<article class="project">
+					<a class="project project-link" href="/work/type-1-diabetes">
 						<div class="project-image project-two"></div>
 
 						<div class="project-content">
@@ -132,7 +132,7 @@
 								<span>Health</span>
 							</div>
 						</div>
-					</article>
+					</a>
 
 
 					<!-- Bachelor's Thesis -->
@@ -1532,6 +1532,19 @@
 	.reveal.visible {
 		opacity: 1;
 		transform: translateY(0);
+	}
+
+	.project-link {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.project-link h3 {
+		transition: color 0.2s ease;
+	}
+
+	.project-link:hover h3 {
+		color: var(--accent);
 	}
 
 	@keyframes projectFadeUp {
