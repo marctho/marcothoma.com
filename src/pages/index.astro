@@ -18,6 +18,11 @@
 		<header class="header">
 			<a class="logo" href="/">MT</a>
 
+			<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+				<span></span>
+				<span></span>
+			</button>
+
 			<nav>
 				<a href="#about">About</a>
 				<a href="#work">Work</a>
@@ -567,6 +572,29 @@
 			);
 
 			revealElements.forEach((element) => observer.observe(element));
+
+			const menuToggle = document.querySelector('.menu-toggle');
+			const nav = document.querySelector('nav');
+
+			menuToggle?.addEventListener('click', () => {
+				const isOpen = nav?.classList.toggle('open');
+
+				menuToggle.classList.toggle('active', isOpen);
+
+				menuToggle.setAttribute('aria-expanded', String(isOpen));
+				menuToggle.setAttribute(
+					'aria-label',
+					isOpen ? 'Close navigation' : 'Open navigation'
+				);
+			});
+			nav?.querySelectorAll('a').forEach((link) => {
+				link.addEventListener('click', () => {
+					nav.classList.remove('open');
+					menuToggle?.classList.remove('active');
+					menuToggle?.setAttribute('aria-expanded', 'false');
+					menuToggle?.setAttribute('aria-label', 'Open navigation');
+				});
+			});
 		</script>
 	</body>
 </html>
@@ -622,15 +650,35 @@
 	}
 
 	nav a {
+		position: relative;
 		color: #ffffff;
 		text-decoration: none;
 		font-size: 14px;
-		transition: opacity 0.2s ease;
+		transition: 
+			color 0.2s ease,
+			opacity 0.2s ease;
 	}
 
 	nav a:hover {
 		color: var(--accent);
 		opacity: 1;
+	}
+
+	nav a::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -6px;
+		width: 100%;
+		height: 1px;
+		background: var(--accent);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.25s ease;
+	}
+
+	nav a:hover::after {
+		transform: scaleX(1);
 	}
 
 	.hero {
@@ -720,6 +768,13 @@
 	.text-link span,
 	.contact-button span {
 		color: var(--accent);
+		transition: transform 0.2s ease;
+	}
+
+	.button:hover span,
+	.text-link:hover span,
+	.contact-button:hover span {
+		transform: translateX(4px);
 	}
 
 	.primary {
@@ -793,6 +848,11 @@
 		color: var(--accent);
 	}
 
+	.section-heading a,
+	.contact-links a {
+		transition: color 0.2s ease;
+	}
+
 	.projects {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -818,6 +878,11 @@
 		height: 245px;
 		border-bottom: 1px solid var(--border);
 		background-color: #d9ddda;
+		transition: transform 0.45s ease;
+	}
+
+	.project:hover .project-image {
+		transform: scale(1.025);
 	}
 
 	.project-one {
@@ -1369,6 +1434,35 @@
 		text-align: right;
 	}
 
+	.menu-toggle {
+		display: none;
+		width: 38px;
+		height: 38px;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		cursor: pointer;
+	}
+
+	.menu-toggle span {
+		display: block;
+		width: 22px;
+		height: 1.5px;
+		margin: 6px auto;
+		background: #101312;
+		transition:
+			transform 0.25s ease,
+			opacity 0.25s ease;
+	}
+
+	.menu-toggle.active span:first-child {
+		transform: translateY(3.75px) rotate(45deg);
+	}
+
+	.menu-toggle.active span:last-child {
+		transform: translateY(-3.75px) rotate(-45deg);
+	}
+
 	@keyframes heroFadeUp {
 		from {
 			opacity: 0;
@@ -1440,13 +1534,121 @@
 		transform: translateY(0);
 	}
 
+	@keyframes projectFadeUp {
+		from {
+			opacity: 0;
+			transform: translateY(22px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.work .project {
+		opacity: 0;
+	}
+
+	.work.visible .project {
+		animation: projectFadeUp 0.65s ease forwards;
+	}
+
+	.work.visible .project:nth-child(1) {
+		animation-delay: 0.1s;
+	}
+
+	.work.visible .project:nth-child(2) {
+		animation-delay: 0.22s;
+	}
+
+	.work.visible .project:nth-child(3) {
+		animation-delay: 0.34s;
+	}
+
+	@keyframes earthGlow {
+		0% {
+			opacity: 0.28;
+			transform: scale(0.96);
+		}
+
+		50% {
+			opacity: 0.48;
+			transform: scale(1.06);
+		}
+
+		100% {
+			opacity: 0.28;
+			transform: scale(0.96);
+		}
+	}
+
+	.hero-visual::before {
+		content: "";
+		position: absolute;
+		width: 500px;
+		height: 500px;
+		left: 8%;
+		top: 22%;
+		border-radius: 50%;
+
+		background: radial-gradient(
+			circle,
+			rgba(222, 172, 83, 0.22) 0%,
+			rgba(222, 172, 83, 0.10) 30%,
+			transparent 68%
+		);
+
+		filter: blur(22px);
+		pointer-events: none;
+
+		animation: earthGlow 8s ease-in-out infinite;
+	}
+
 	@media (max-width: 900px) {
 		.header {
 			position: relative;
 			height: 75px;
 		}
 
+		.menu-toggle {
+			display: block;
+			position: relative;
+			z-index: 20;
+		}
+
 		nav {
+			display: none;
+			position: absolute;
+			top: 75px;
+			left: 0;
+			right: 0;
+			z-index: 15;
+
+			flex-direction: column;
+			gap: 0;
+
+			padding: 16px var(--page-padding) 26px;
+			background: #f7f7f5;
+			border-bottom: 1px solid var(--border);
+		}
+
+		nav.open {
+			display: flex;
+		}
+
+		nav a {
+			padding: 14px 0;
+			color: #101312;
+			font-size: 15px;
+			border-bottom: 1px solid var(--border);
+		}
+
+		nav a:last-child {
+			border-bottom: 0;
+		}
+
+		nav a::after {
 			display: none;
 		}
 
@@ -1573,9 +1775,26 @@
 			opacity: 1;
 			transform: none;
 		}
+		.hero-visual::before {
+			animation: none;	
+		}
 		.reveal {
 			opacity: 1;
 			transform: none;
+			transition: none;
+		}
+		.work .project,
+		.work.visible .project {
+			opacity: 1;
+			transform: none;
+			animation: none;
+		}
+		.button span,
+		.contact-button span,
+		nav a::after {
+			transition: none;
+		}
+		.project-image {
 			transition: none;
 		}
 	}
