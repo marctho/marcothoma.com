@@ -845,7 +845,9 @@
 		}
 
 		.hero-side {
+			width: 100%;
 			max-width: 300px;
+			margin-left: auto;
 		}
 
 		.content-section {
@@ -856,9 +858,13 @@
 		}
 
 		.two-column-text,
-		.experience-section,
-		.about-cta {
+		.experience-section {
 			grid-template-columns: 1fr;
+		}
+
+		.about-cta {
+			grid-template-columns: 1fr auto;
+			align-items: end;
 		}
 
 		.journey-grid,
@@ -866,20 +872,12 @@
 			grid-template-columns: 1fr;
 		}
 
+		.journey-text {
+			gap: 28px;
+		}
+
 		.interest-grid {
 			grid-template-columns: 1fr;
-		}
-
-		footer {
-			grid-template-columns: 1fr;
-			gap: 7px;
-			padding-top: 22px;
-			padding-bottom: 22px;
-		}
-
-		footer p:nth-child(2),
-		footer p:last-child {
-			text-align: left;
 		}
 	}
 
@@ -922,8 +920,41 @@
 		}
 
 		.about-cta {
+			grid-template-columns: 1fr;
 			align-items: flex-start;
 			gap: 35px;
+		}
+
+		.experience-section {
+			gap: 45px;
+		}
+
+		.experience-copy {
+			padding-top: 0;
+		}
+
+		footer {
+			grid-template-columns: 1fr auto;
+			gap: 7px 20px;
+			padding-top: 22px;
+			padding-bottom: 22px;
+		}
+
+		footer p:first-child {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		footer p:nth-child(2) {
+			grid-column: 1;
+			grid-row: 2;
+			text-align: left;
+		}
+
+		footer p:last-child {
+			grid-column: 2;
+			grid-row: 1;
+			text-align: right;
 		}
 	}
 

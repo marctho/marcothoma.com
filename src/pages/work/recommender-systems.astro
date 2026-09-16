@@ -120,7 +120,7 @@
 				<p class="research-question">
 					How do explanation presentation characteristics in
 					recommender systems influence users'
-					<span>comprehension</span> and
+					<span> comprehension</span> and
 					<span> enabledness</span>?
 				</p>
 			</section>
@@ -956,7 +956,7 @@
 
 	.secondary-copy {
 		margin-top: 18px;
-		color: var(--light-muted);
+		color: var(--muted);
 	}
 
 	.muted-section {
@@ -1203,7 +1203,7 @@
 	}
 
 	.task-grid span {
-		color: var(--light-muted);
+		color: var(--accent);
 		font-size: 9px;
 		font-weight: 700;
 		letter-spacing: 0.14em;
@@ -1560,8 +1560,17 @@
 			grid-template-columns: 1fr 1fr;
 		}
 
+		.dimension h3 {
+			font-size: 28px;
+		}
+
 		.process-grid {
 			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.process-item:nth-child(1),
+		.process-item:nth-child(2) {
+			border-bottom: 1px solid var(--border);
 		}
 
 		.process-item:nth-child(2) {
@@ -1597,18 +1606,6 @@
 		.limitations-grid {
 			grid-template-columns: 1fr;
 		}
-
-		footer {
-			grid-template-columns: 1fr;
-			gap: 7px;
-			padding-top: 22px;
-			padding-bottom: 22px;
-		}
-
-		footer p:nth-child(2),
-		footer p:last-child {
-			text-align: left;
-		}
 	}
 
 
@@ -1635,6 +1632,7 @@
 		.project-meta {
 			grid-template-columns: 1fr;
 			gap: 22px;
+			padding-bottom: 28px;
 		}
 
 		.question-section {
@@ -1649,7 +1647,19 @@
 		}
 
 		.process-item {
+			min-height: 0;
+			padding: 32px 28px 38px;
 			border-right: 0;
+			border-bottom: 1px solid var(--border);
+		}
+
+		.process-item:last-child {
+			border-right: 0;
+			border-bottom: 0;
+		}
+
+		.process-item h3 {
+			margin-top: 34px;
 		}
 
         .factor-grid {
@@ -1660,6 +1670,30 @@
 			align-items: flex-start;
 			flex-direction: column;
 			gap: 28px;
+		}
+
+		footer {
+			grid-template-columns: 1fr auto;
+			gap: 7px 20px;
+			padding-top: 22px;
+			padding-bottom: 22px;
+		}
+
+		footer p:first-child {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		footer p:nth-child(2) {
+			grid-column: 1;
+			grid-row: 2;
+			text-align: left;
+		}
+
+		footer p:last-child {
+			grid-column: 2;
+			grid-row: 1;
+			text-align: right;
 		}
 	}
 
