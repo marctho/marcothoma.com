@@ -1,0 +1,302 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<title>Page Not Found | Marco Thoma</title>
+
+		<meta
+			name="description"
+			content="The page you are looking for could not be found."
+		/>
+
+		<meta name="robots" content="noindex" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="theme-color" content="#101312" />
+	</head>
+
+	<body>
+		<a class="skip-link" href="#main-content">
+			Skip to main content
+		</a>
+
+		<header>
+			<a class="logo" href="/" aria-label="Marco Thoma homepage">MT</a>
+		</header>
+
+		<main id="main-content">
+			<section class="error-page">
+
+				<div>
+					<p class="eyebrow">404 / PAGE NOT FOUND</p>
+
+					<h1>
+						Looks like this page<br />
+						<span>went missing.</span>
+					</h1>
+
+					<p class="description">
+						The page you’re looking for doesn’t exist or may have moved.
+						You can head back home or continue exploring my work.
+					</p>
+
+					<div class="actions">
+						<a class="primary-button" href="/">
+							Back home
+							<span>→</span>
+						</a>
+
+						<a class="secondary-button" href="/work">
+							View my work
+						</a>
+					</div>
+				</div>
+
+				<div class="error-number">
+					<span>404</span>
+				</div>
+
+			</section>
+		</main>
+
+		<footer>
+			<p>marcothoma.com</p>
+			<p>Designed & built by Marco Thoma</p>
+			<p>© 2026</p>
+		</footer>
+	</body>
+</html>
+
+
+<style>
+	:root {
+		--background: #f7f7f5;
+		--text: #101312;
+		--muted: #626966;
+		--border: #d9ddda;
+		--accent: #deac53;
+		--accent-text: #8f6210;
+		--page-padding: clamp(28px, 4vw, 76px);
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+		background: var(--background);
+		color: var(--text);
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	header {
+		height: 84px;
+		padding: 0 var(--page-padding);
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.logo {
+		font-size: 22px;
+		font-weight: 750;
+		text-decoration: none;
+        color: var(--text);
+	}
+
+	.error-page {
+		min-height: calc(100vh - 156px);
+		padding: 100px var(--page-padding);
+		display: grid;
+		grid-template-columns: 1fr auto;
+		gap: 80px;
+		align-items: center;
+	}
+
+	.eyebrow {
+		margin: 0 0 24px;
+		color: var(--muted);
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+	}
+
+	h1 {
+		max-width: 900px;
+		margin: 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(52px, 7vw, 100px);
+		font-weight: 400;
+		line-height: 0.98;
+		letter-spacing: -0.045em;
+	}
+
+	h1 span {
+		color: var(--accent);
+	}
+
+	.description {
+		max-width: 620px;
+		margin: 36px 0 0;
+		color: var(--muted);
+		font-size: 16px;
+		line-height: 1.75;
+	}
+
+	.actions {
+		display: flex;
+		gap: 14px;
+		margin-top: 40px;
+	}
+
+	.actions a {
+		padding: 16px 22px;
+		font-size: 13px;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.primary-button {
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		background: var(--text);
+		color: white;
+	}
+
+	.primary-button span {
+		color: var(--accent);
+	}
+
+	.secondary-button {
+		border: 1px solid var(--border);
+        color: var(--text);
+	}
+
+	.error-number {
+		align-self: center;
+	}
+
+	.error-number span {
+		color: #e8e8e4;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(150px, 20vw, 330px);
+		line-height: 0.8;
+	}
+
+	footer {
+		min-height: 72px;
+		padding: 0 var(--page-padding);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
+		color: var(--muted);
+		font-size: 10px;
+	}
+
+	footer p {
+		margin: 0;
+	}
+
+	footer p:nth-child(2) {
+		text-align: center;
+	}
+
+	footer p:last-child {
+		text-align: right;
+	}
+
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 50%;
+		z-index: 9999;
+		padding: 12px 16px;
+		background: #101312;
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transform: translate(-50%, -150%);
+		transition: transform 0.2s ease;
+	}
+
+	.skip-link:focus {
+		transform: translate(-50%, 0);
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #ffffff;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 5px #101312;
+	}
+
+	@media (max-width: 900px) {
+		.error-page {
+			grid-template-columns: 1fr;
+			min-height: auto;
+		}
+
+		.error-number {
+			display: none;
+		}
+	}
+
+	@media (max-width: 600px) {
+		header {
+			height: 70px;
+		}
+
+		.error-page {
+			padding-top: 70px;
+			padding-bottom: 90px;
+		}
+
+		h1 {
+			font-size: 48px;
+		}
+
+		.actions {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		footer {
+			grid-template-columns: 1fr auto;
+			gap: 7px 20px;
+			padding-top: 22px;
+			padding-bottom: 22px;
+		}
+
+		footer p:first-child {
+			grid-column: 1;
+			grid-row: 1;
+		}
+
+		footer p:nth-child(2) {
+			grid-column: 1;
+			grid-row: 2;
+			text-align: left;
+		}
+
+		footer p:last-child {
+			grid-column: 2;
+			grid-row: 1;
+			text-align: right;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.skip-link {
+			transition: none;
+		}
+	}
+</style>
