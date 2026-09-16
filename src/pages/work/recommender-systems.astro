@@ -22,6 +22,9 @@
 	</head>
 
 	<body>
+		<a class="skip-link" href="#main-content">
+			Skip to main content
+		</a>
 		<header class="project-header">
 			<a class="logo" href="/">MT</a>
 
@@ -31,7 +34,7 @@
 			</a>
 		</header>
 
-		<main>
+		<main id="main-content">
 
 			<!-- HERO -->
 			<section class="project-hero">
@@ -331,7 +334,7 @@
                     <figure class="modality-card">
                         <img
                             src="/images/projects/masters-thesis/visual-explanation.png"
-                            alt="Visual explanation modality showing recommendation reasons as circular charts."
+                            alt="Visual explanation modality showing recommendation reasons as circular progress charts."
                         />
                         <figcaption>
                             <span class="modality-label">M3</span>
@@ -746,6 +749,7 @@
 		--light-muted: #858b88;
 		--border: #d9ddda;
 		--accent: #deac53;
+		--accent-text: #8f6210;
 		--dark: #0b100e;
 		--page-padding: clamp(28px, 4vw, 76px);
 	}
@@ -772,6 +776,25 @@
 		color: inherit;
 	}
 
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 50%;
+		z-index: 9999;
+		padding: 12px 16px;
+		background: #101312;
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transform: translate(-50%, -150%);
+		transition: transform 0.2s ease;
+	}
+
+	.skip-link:focus {
+		transform: translate(-50%, 0);
+	}
 
 	/* HEADER */
 
@@ -1033,7 +1056,7 @@
 	}
 
 	.dimension > span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-family: Georgia, "Times New Roman", serif;
 		font-size: 25px;
 	}
@@ -1079,7 +1102,7 @@
 	}
 
 	.process-item > span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-family: Georgia, "Times New Roman", serif;
 		font-size: 24px;
 	}
@@ -1128,7 +1151,7 @@
 	}
 
 	.condition-card > span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-size: 10px;
 		font-weight: 700;
 		letter-spacing: 0.14em;
@@ -1177,7 +1200,7 @@
     }
 
     .factor-grid span {
-        color: var(--accent);
+        color: var(--accent-text);
         font-family: Georgia, "Times New Roman", serif;
         font-size: 18px;
     }
@@ -1207,7 +1230,7 @@
 	}
 
 	.task-grid span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-size: 9px;
 		font-weight: 700;
 		letter-spacing: 0.14em;
@@ -1262,7 +1285,7 @@
         font-size: 0.75rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: var(--accent);
+        color: var(--accent-text);
     }
 
     .modality-card h4 {
@@ -1398,7 +1421,7 @@
 	}
 
 	.implication-grid span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-family: Georgia, "Times New Roman", serif;
 		font-size: 23px;
 	}
@@ -1711,5 +1734,12 @@
 		.next-project a span {
 			transition: none;
 		}
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #ffffff;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 5px #101312;
 	}
 </style>

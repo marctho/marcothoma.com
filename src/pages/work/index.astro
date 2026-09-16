@@ -20,6 +20,9 @@
 	</head>
 
 	<body>
+		<a class="skip-link" href="#main-content">
+			Skip to main content
+		</a>
 		<header class="work-header">
 			<a class="logo" href="/">MT</a>
 
@@ -29,7 +32,7 @@
 			</a>
 		</header>
 
-		<main>
+		<main id="main-content">
 
 			<!-- HERO -->
 			<section class="work-hero">
@@ -168,6 +171,7 @@
 		--light-muted: #858b88;
 		--border: #d9ddda;
 		--accent: #deac53;
+		--accent-text: #8f6210;
 		--page-padding: clamp(28px, 4vw, 76px);
 	}
 
@@ -186,6 +190,25 @@
 		color: inherit;
 	}
 
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 50%;
+		z-index: 9999;
+		padding: 12px 16px;
+		background: #101312;
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transform: translate(-50%, -150%);
+		transition: transform 0.2s ease;
+	}
+
+	.skip-link:focus {
+		transform: translate(-50%, 0);
+	}
 
 	/* HEADER */
 
@@ -279,7 +302,7 @@
 	.project-number {
 		align-self: start;
 		padding-top: 5px;
-		color: var(--accent);
+		color: var(--accent-text);
 		font-family: Georgia, "Times New Roman", serif;
 		font-size: 21px;
 	}
@@ -515,5 +538,12 @@
 		.work-cta a span {
 			transition: none;
 		}
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #ffffff;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 5px #101312;
 	}
 </style>

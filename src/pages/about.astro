@@ -20,6 +20,9 @@
 	</head>
 
 	<body>
+		<a class="skip-link" href="#main-content">
+			Skip to main content
+		</a>
 		<header class="about-header">
 			<a class="logo" href="/">MT</a>
 
@@ -29,7 +32,7 @@
 			</a>
 		</header>
 
-		<main>
+		<main id="main-content">
 
 			<!-- HERO -->
 			<section class="about-hero">
@@ -367,6 +370,7 @@
 		--light-muted: #858b88;
 		--border: #d9ddda;
 		--accent: #deac53;
+		--accent-text: #8f6210;
 		--dark: #0b100e;
 		--page-padding: clamp(28px, 4vw, 76px);
 	}
@@ -495,6 +499,26 @@
 		background: #eeeeeb;
 	}
 
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 50%;
+		z-index: 9999;
+		padding: 12px 16px;
+		background: #101312;
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transform: translate(-50%, -150%);
+		transition: transform 0.2s ease;
+	}
+
+	.skip-link:focus {
+		transform: translate(-50%, 0);
+	}
+
 
 	/* HERO */
 
@@ -566,7 +590,7 @@
 	}
 
 	.journey-grid span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-size: 10px;
 		font-weight: 700;
 		letter-spacing: 0.12em;
@@ -654,7 +678,7 @@
 	}
 
 	.approach-grid span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-size: 9px;
 		font-weight: 700;
 		letter-spacing: 0.14em;
@@ -758,7 +782,7 @@
 	}
 
 	.work-links span {
-		color: var(--accent);
+		color: var(--accent-text);
 		font-family: Georgia, "Times New Roman", serif;
 		font-size: 20px;
 	}
@@ -974,5 +998,12 @@
 		.about-cta a span {
 			transition: none;
 		}
+	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #ffffff;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 5px #101312;
 	}
 </style>

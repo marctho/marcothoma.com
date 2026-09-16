@@ -27,18 +27,31 @@
 		<meta property="og:site_name" content="Marco Thoma" /> 
 
 		<meta name="twitter:card" content="summary_large_image" />
+
+		<meta
+			property="og:image"
+			content="https://marcothoma.com/images/social-preview.png"
+		/>
+
+		<meta
+			name="twitter:image"
+			content="https://marcothoma.com/images/social-preview.png"
+		/>
 	</head>
 
 	<body>
+		<a class="skip-link" href="#main-content">
+			Skip to main content
+		</a>
 		<header class="header">
 			<a class="logo" href="/">MT</a>
 
-			<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+			<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu">
 				<span></span>
 				<span></span>
 			</button>
 
-			<nav>
+			<nav id="mobile-menu">
 				<a href="#about">About</a>
 				<a href="#work">Work</a>
 				<a href="#experience">Experience</a>
@@ -47,7 +60,7 @@
 			</nav>
 		</header>
 
-		<main>
+		<main id="main-content">
 			<section class="hero">
 				<div class="hero-content">
 					<p class="eyebrow">PEOPLE × TECHNOLOGY × DIGITAL EXPERIENCES</p>
@@ -592,8 +605,8 @@
 
 			revealElements.forEach((element) => observer.observe(element));
 
-			const menuToggle = document.querySelector('.menu-toggle');
-			const nav = document.querySelector('nav');
+			const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+			const nav = document.querySelector<HTMLElement>('#mobile-menu');
 
 			menuToggle?.addEventListener('click', () => {
 				const isOpen = nav?.classList.toggle('open');
@@ -614,6 +627,16 @@
 					menuToggle?.setAttribute('aria-label', 'Open navigation');
 				});
 			});
+
+			document.addEventListener('keydown', (event) => {
+			if (event.key === 'Escape' && nav?.classList.contains('open')) {
+				nav.classList.remove('open');
+				menuToggle?.classList.remove('active');
+				menuToggle?.setAttribute('aria-expanded', 'false');
+				menuToggle?.setAttribute('aria-label', 'Open navigation');
+				menuToggle?.focus();
+			}
+		});
 		</script>
 	</body>
 </html>
@@ -638,6 +661,7 @@
 	:root {
 		--page-padding: clamp(24px, 5vw, 76px);
 		--accent: #deac53;
+		--accent-text: #8f6210;
 		--border: #d9ddda;
 		--muted: #616765;
 	}
@@ -1482,6 +1506,26 @@
 		transform: translateY(-3.75px) rotate(-45deg);
 	}
 
+	.skip-link {
+		position: fixed;
+		top: 12px;
+		left: 50%;
+		z-index: 9999;
+		padding: 12px 16px;
+		background: #101312;
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transform: translate(-50%, -150%);
+		transition: transform 0.2s ease;
+	}
+
+	.skip-link:focus {
+		transform: translate(-50%, 0);
+	}
+
 	@keyframes heroFadeUp {
 		from {
 			opacity: 0;
@@ -1830,4 +1874,11 @@
 			transition: none;
 		}
 	}
+
+	a:focus-visible,
+	button:focus-visible {
+		outline: 2px solid #ffffff;
+		outline-offset: 2px;
+		box-shadow: 0 0 0 5px #101312;
+	}	
 </style>
